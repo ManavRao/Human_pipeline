@@ -1,0 +1,142 @@
+<!doctype html>
+
+<title>The Pipeline</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/basic.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/p1.css') }}">
+<script src="{{ url_for('static', filename='js/basic.js') }}"></script>
+
+<script>
+    var flag =0
+    function foo(){
+        if (flag==0){
+            {% for k in temp[temp_num] %}
+                document.getElementById("dump-deck").innerHTML += "<img data-draggable='item' class='card' src={{ url_for('static', filename=(k[7:])) }}>";
+            {% endfor %}
+            flag = 1;
+        }
+     toggle_visibility('popupBoxOnePositionIntro');
+    }
+
+</script>
+
+<div id="tutorial">
+<div id="tutorialButton" style="margin-top: 20px; display: flex; justify-content: space-between" >
+    <a href="javascript:void(0)" class="button" onclick="startTutorial1();" style="height:40px; background-color: #de3535;">Tutorial</a>
+    <div style="display: flex; flex-direction: row; margin: 0px 40px 0em;"><div onmouseover="glow(document.getElementById('card-deck'), 'black');" onmouseout="glow(document.getElementById('card-deck'), 'green');" style="border-radius: 4px; height: 40px; width: 40px; background: green"></div><p><strong>IMAGES OF THE CHOSEN CHARACTER</strong></p></div>
+    <div style="display: flex; flex-direction: row; margin: 0px 40px 0em;"><div onmouseover="glow(document.getElementById('dump-deck'), 'black');" onmouseout="glow(document.getElementById('dump-deck'), 'cornflowerblue');" style="border-radius: 4px; height: 40px; width: 40px; background: cornflowerblue"></div><p><strong>IMAGES OF EVERY OTHER CHARACTER</strong></p></div>
+    <div style="display: flex; flex-direction: row; margin: 0px 40px 0em;"><div onmouseover="glow(document.getElementById('people-deck'), 'black');" onmouseout="glow(document.getElementById('people-deck'), 'indianred');" style="border-radius: 4px; height: 40px; width: 40px; background: indianred"></div><p><strong>IMAGES THAT DOESN'T CONTAIN ANY CHARACTER (IF PRESENT)</strong></p></div>
+
+</div>
+
+<div id="popupBoxOnePosition2">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <p align="right">
+            <a href="javascript:void(0)" class="button" onclick="closeTutorial1();" style="background-color: #de3535;">X</a>
+            </p>
+            <h1>TUTORIAL PART 1</h1>
+            <h2>"PICK THE GROUP"</h2>
+            <p>In this step you will be shown a group of images of characters from a clip in a <strong>blue</strong> panel.</p>
+            <p>Your task is to sort those images into 3, viz. Blue, Green and Red panels.</p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition', 'popupBoxOnePosition2');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition2', 'popupBoxOnePosition3');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+<div id="popupBoxOnePosition3">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <p align="right">
+            <a href="javascript:void(0)" class="button" onclick="closeTutorial1();" style="background-color: #de3535;">X</a>
+            </p>
+            <h1>TUTORIAL PART 1</h1>
+            <h2>"PICK THE GROUP"</h2>
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture1.png') }}"></p>
+            <p align="center">This is how the first screen looks.</p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition2', 'popupBoxOnePosition3');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition3', 'popupBoxOnePosition4');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+
+<div id="popupBoxOnePosition4">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <p align="right">
+            <a href="javascript:void(0)" class="button" onclick="closeTutorial1();" style="background-color: #de3535;">X</a>
+            </p>
+            <h1>TUTORIAL PART 1</h1>
+            <br />
+            <h3>How to sort the images?</h3>
+            <p>1. Choose an image of a character, most likely the one who appears in the maximum number of images.</p>
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture2.png') }}"></p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition3', 'popupBoxOnePosition4');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition4', 'popupBoxOnePosition5');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+
+<div id="popupBoxOnePosition5">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <p align="right">
+            <a href="javascript:void(0)" class="button" onclick="closeTutorial1();" style="background-color: #de3535;">X</a>
+            </p>
+            <h1>TUTORIAL PART 1</h1>
+            <br />
+            <h3>How to sort the images?</h3>
+            <p>2. Drag all the images of that character to the green panel.</p>
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture3.gif') }}"></p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition4', 'popupBoxOnePosition5');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition5', 'popupBoxOnePosition6');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+
+<div id="popupBoxOnePosition6">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <p align="right">
+            <a href="javascript:void(0)" class="button" onclick="closeTutorial1();" style="background-color: #de3535;">X</a>
+            </p>
+            <h1>TUTORIAL PART 1</h1>
+            <br />
+            <h3>How to sort the images?</h3>
+            <p>3. Now drag the images which doesn't contain any single characters to the red panel.</p>
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture4.gif') }}"></p>
+            <p>After pressing 'SUBMIT', you'll be directed to the PART-2 of the task.</p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition5', 'popupBoxOnePosition6');" style="background-color: #de3535;">Back</a></span>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<div class="container" id="mega">
+    <header>
+        <h1>PART-1: PICK THE GROUP</h1>
+    </header>
+        <div data-draggable="target" ondragover="glow(this, 'black');" ondragend="glow(this, 'green')" ondragleave="glow(this, 'green')" class="deck" id="card-deck" style="background: green">
+        </div>
+        <div data-draggable="target" ondragover="glow(this, 'black');" ondragend="glow(this, 'cornflowerblue')" ondragleave="glow(this, 'cornflowerblue')" class="deck" id="dump-deck" style="background: cornflowerblue">
+        </div>
+
+        <div data-draggable="target" ondragover="glow(this, 'black');" ondragend="glow(this, 'indianred')" ondragleave="glow(this, 'indianred')" class="deck" id="people-deck" style="background: indianred">
+        </div>
+    <p id="test"></p>
+    <a href="pipeline2.html" onclick="test1({{ temp_num }});" class="button" id="done" style="background-color: #de3535; margin-left: 25px;"><b>Submit</b></a>
+
+</div>
+
+<div id="popupBoxOnePositionIntro">
+    <div class="popupBoxWrapper">
+        <div onload="toggle_visibility('wrapper')" class="popupBoxContent">
+            <h3 id="username">Press Start Whenever Ready</h3>
+            <a class="button" id="done" onclick="foo();" style="background-color: #de3535;"><b>Start</b></a>
+        </div>
+    </div>
+</div>

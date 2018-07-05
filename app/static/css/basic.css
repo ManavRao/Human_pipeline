@@ -1,0 +1,152 @@
+body{
+	overflow-y: scroll; 
+	padding: 0;
+	margin: 0;
+	font-family: Verdana;
+	font-size: 16px;
+	height: 400px;
+	
+}
+#wrapper{
+	width: 300px;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+	text-align: center;
+}
+
+#tutorialButton{
+    display: block;
+    align-content: right;
+}
+
+#popupBoxOnePosition{
+    top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+	background-color: rgba(0,0,0,0.7); display: none;
+			}
+
+#popupBoxOnePosition2{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: none;
+			}
+
+#popupBoxOnePosition3{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: none;
+
+}
+
+#popupBoxOnePosition4{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: none;
+
+}
+
+#popupBoxOnePosition5{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: none;
+
+}
+
+#popupBoxOnePosition6{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: none;
+
+}
+
+#popupBoxOnePosition7{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: none;
+
+}
+
+#popupBoxOnePosition8{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: none;
+
+}
+
+#popupBoxOnePosition9{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: none;
+
+}
+
+#popupBoxOnePosition10{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: none;
+
+}
+
+
+
+#popupBoxOnePositionIntro{
+				top: 0; left: 0; position: fixed;
+    overflow: scroll; width: 100%; height: 100%;
+				background-color: rgba(0,0,0,0.7); display: block;
+
+}
+
+
+.popupBoxWrapper{
+	width: 550px; margin: 50px auto; text-align: center;
+}
+
+.popupBoxWrapper2{
+	width: 800px; margin: 50px auto; text-align: left;
+    background: white;
+    padding: 2em;
+}
+
+.popupBoxContent{
+	background-color: #FFF; padding: 15px;
+}
+
+.button{
+	display:inline-block;
+	font-family: Trebuchet MS;
+	outline:0 !important;
+	border:0;
+	border-radius:2px;
+	color:white !important;
+	background:#7DB1EF !important;
+	white-space:nowrap;
+	padding:0.48rem 0.8rem !important;
+	line-height:1.4 !important;
+	position:relative;
+	text-transform:uppercase;
+    cursor: pointer;
+}
+
+.button:not(.disabled):hover{
+	color:white !important;
+	background:black !important
+}
+
+.button:not(.disabled):focus{
+	color:white !important;
+	background:red !important;
+	transform: translateY(2px);
+}
+
+#buttons{
+    font-size: 0;
+}
+
+#rt{
+    text-align: right;
+}
+span { width:50%; display:inline-block; }
+span.align-right { text-align:right; }
+
+span a { font-size:16px; }

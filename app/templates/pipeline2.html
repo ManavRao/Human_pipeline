@@ -1,0 +1,152 @@
+<!doctype html>
+
+<title>The Pipeline</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/basic.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/p2.css') }}">
+<script src="{{ url_for('static', filename='js/basic.js') }}"></script>
+
+
+<script>
+    var flag =0;
+    function foo1(){
+        var temp_cluster = JSON.parse(sessionStorage.getItem("cluster"));
+        var temp_keys = Object.keys(temp_cluster);
+        var i;
+        var j;
+        if (flag == 0){
+            for (i=0;i<temp_keys.length;i++){
+                if (temp_keys[i] == 'other_characters'){
+                    for (j=0;j<temp_cluster[temp_keys[i]].length;j++){
+                        var add1 = temp_cluster[temp_keys[i]][j];
+                        document.getElementById("card-deck").innerHTML += "<img data-draggable='item' class='card' src="+ add1 + ">";
+                    }
+                }
+                else{
+                    var add2 = temp_cluster[temp_keys[i]][0];
+                    document.getElementById("card-deck").innerHTML += "<img data-draggable='item' class='card' src="+add2+">";
+                }
+            }
+        }
+        flag = 1;
+        toggle_visibility('popupBoxOnePositionIntro');
+    }
+
+</script>
+
+
+<div id="tutorial">
+    <div id="tutorialButton">
+        <a href="javascript:void(0)" class="button" onclick="startTutorial2();" style="background-color: #de3535;">Tutorial</a>
+    </div>
+
+
+    <div id="popupBoxOnePosition7">
+        <div class="popupBoxWrapper2">
+            <p class="popupBoxContent">
+            <p align="right"><a href="javascript:void(0)" class="button" onclick="closeTutorial2();" style="background-color: #de3535;">X</a></p>
+            <h1>TUTORIAL PART 2</h1>
+            <h2>"GROUP SAME CHARACTERS"</h2><br />
+            <p>Here Your task is to put all the images having the same character in one panel</p>
+            <br />
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture5.png') }}"></p>
+            <p align="center">This is how the first screen looks.</p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition6', 'popupBoxOnePosition7');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition7', 'popupBoxOnePosition8');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+
+    <div id="popupBoxOnePosition8">
+        <div class="popupBoxWrapper2">
+            <p class="popupBoxContent">
+            <p align="right"><a href="javascript:void(0)" class="button" onclick="closeTutorial2();" style="background-color: #de3535;">X</a></p>
+            <h1>TUTORIAL PART 2</h1>
+            <h2>"GROUP SAME CHARACTERS"</h2><br />
+            <p>You have to drag the images of same person in one panel. Make sure to drop the picture in the black highlighted region.</p>
+            <p style="text-align: center;"><img draggable="false" height="350px" width="700px" src="{{ url_for('static', filename='img/Picture6.gif') }}"></p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition7', 'popupBoxOnePosition8');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition8', 'popupBoxOnePosition9');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+
+    <div id="popupBoxOnePosition9">
+        <div class="popupBoxWrapper2">
+            <div class="popupBoxContent">
+                <p align="right"><a href="javascript:void(0)" class="button" onclick="closeTutorial2();" style="background-color: #de3535;">X</a></p>
+                <h1>TUTORIAL PART 2</h1>
+                <h2>"GROUP SAME CHARACTERS"</h2>
+                <p>You can always compare larger sizes of 2 images with the help of side panel.</p>
+                <p style="text-align: center;"><img draggable="false" height="350px" width="700px" src="{{ url_for('static', filename='img/Picture7.gif') }}"></p>
+                <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition8', 'popupBoxOnePosition9');" style="background-color: #de3535;">Back</a></span>
+                <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition9', 'popupBoxOnePosition10');" style="background-color: #de3535;">Next</a></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popupBoxOnePosition10">
+        <div class="popupBoxWrapper2">
+            <div class="popupBoxContent">
+                 <p align="right"><a href="javascript:void(0)" class="button" onclick="closeTutorial2();" style="background-color: #de3535;">X</a></p>
+                <h1>TUTORIAL PART 2</h1>
+                <h2>"GROUP SAME CHARACTERS"</h2>
+                <br />
+                <p>You can use any number of green panels, empty panels will be taken care of automatically.</p>
+                <p>If you're not sure about any picture, keep it in the red panel itself.</p>
+                <p>Before pressing submit, make sure, you've grouped every picture. Any picture not included in the green panels will be considered "NOT SURE".</p>
+                <p>You can go through the tutorial anytime by clicking on the button on top left.</p>
+                <p>ALL THE BEST, let's get you started.</p>
+                <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition9', 'popupBoxOnePosition10');" style="background-color: #de3535;">Back</a></span>
+                <span id="rt"><a href="pipeline1.html" class="button" onclick="toggle_visibility('popupBoxOnePosition10');" style="background-color: #de3535;">Let's Start</a></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="mega" style="display: flex; flex-direction: column; justify-content: space-around;">
+    <h1 align="center">PART-2: GROUP SAME CHARACTERS</h1>
+<div class="main">
+
+<div class="container">
+
+        <div data-draggable="target" ondragover="glow(this, 'black');" ondragend="glow(this, 'darkred')" ondragleave="glow(this, 'darkred')" class="deck1" id="card-deck">
+            <!--{% for i in temp %}
+                    <img data-draggable="item" class = "card" src={{ url_for('static', filename=(i[7:] +  "/a.jpg")) }}>
+            {% endfor %} -->
+        </div>
+<div class="characterset" id="section">
+        <div data-draggable="target" ondragover="glow(this, 'black');" ondragend="glow(this, 'darkolivegreen')" ondragleave="glow(this, 'darkolivegreen')" class="deck" id="character">
+        </div>
+
+        <div data-draggable="target" ondragover="glow(this, 'black');" ondragend="glow(this, 'darkolivegreen')" ondragleave="glow(this, 'darkolivegreen')" class="deck" id="character">
+        </div>
+</div>
+<div class="add" style="margin-left: 20px;">
+    <img onclick="newFunction();" ondragleave="newFunction();" align="center" height="37px" width="37px" src="{{ url_for('static', filename="img/add.png") }}">
+</div>
+
+</div>
+    <div class="compare">
+        <h2>Compare 2 cards here</h2>
+        <div data-draggable="target" ondragover="glow(this, 'black');" ondragend="glow(this, 'darkslateblue')" ondragleave="glow(this, 'darkslateblue')" class="deck" id="compare_character">
+        </div>
+
+        <div data-draggable="target" ondragover="glow(this, 'black');" ondragend="glow(this, 'darkslateblue')" ondragleave="glow(this, 'darkslateblue')" class="deck" id="compare_character">
+        </div>
+    </div>
+
+</div>
+
+    <p onclick="checkFinish();" class="button" style="width:80px; align-self:center;  background-color: #de3535;"><b>Submit</b></p>
+    <p id = "test11"></p>
+
+</div>
+
+<div id="popupBoxOnePositionIntro">
+    <div class="popupBoxWrapper">
+        <div onload="toggle_visibility('wrapper')" class="popupBoxContent">
+            <h3 id="username">Well done on Part 1, Click to Start Part 2</h3>
+            <a class="button" id="done" onclick="foo1();" style="background-color: #de3535;"><b>Start</b></a>
+        </div>
+    </div>
+</div>

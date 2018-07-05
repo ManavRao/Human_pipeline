@@ -1,0 +1,156 @@
+<!doctype html>
+<title>The Pipeline</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/basic.css') }}">
+<script src="{{ url_for('static', filename='js/basic.js') }}"></script>
+
+<div id="tutorial">
+<div id="tutorialButton" style="margin-top: 20px; display: flex; justify-content: space-between" >
+    <a href="javascript:void(0)" class="button" onclick="startTutorial();" style="background-color: #de3535;">Tutorial</a>
+</div>
+
+<div id="popupBoxOnePosition">
+    <div class="popupBoxWrapper">
+        <div onload="toggle_visibility('wrapper')" class="popupBoxContent">
+            <h3 id="username">Welcome to the tutorial</h3>
+            <a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition', 'popupBoxOnePosition2');" style="background-color: #de3535;">Lets Get Started</a>
+        </div>
+    </div>
+</div>
+
+<div id="popupBoxOnePosition2">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <h1>TUTORIAL PART 1</h1>
+            <h2>"PICK THE GROUP"</h2>
+            <p>In this step you will be shown a group of images of characters from a clip in a <strong>blue</strong> panel.</p>
+            <p>Your task is to sort those images into 3, viz. Blue, Green and Red panels.</p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition', 'popupBoxOnePosition2');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition2', 'popupBoxOnePosition3');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+<div id="popupBoxOnePosition3">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <h1>TUTORIAL PART 1</h1>
+            <h2>"PICK THE GROUP"</h2>
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture1.png') }}"></p>
+            <p align="center">This is how the first screen looks.</p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition2', 'popupBoxOnePosition3');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition3', 'popupBoxOnePosition4');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+
+<div id="popupBoxOnePosition4">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <h1>TUTORIAL PART 1</h1>
+            <br />
+            <h3>How to sort the images?</h3>
+            <p>1. Choose an image of a character, most likely the one who appears in the maximum number of images.</p>
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture2.png') }}"></p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition3', 'popupBoxOnePosition4');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition4', 'popupBoxOnePosition5');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+
+<div id="popupBoxOnePosition5">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <h1>TUTORIAL PART 1</h1>
+            <br />
+            <h3>How to sort the images?</h3>
+            <p>2. Drag all the images of that character to the green panel.</p>
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture3.gif') }}"></p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition4', 'popupBoxOnePosition5');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition5', 'popupBoxOnePosition6');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+
+<div id="popupBoxOnePosition6">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <h1>TUTORIAL PART 1</h1>
+            <br />
+            <h3>How to sort the images?</h3>
+            <p>3. Now drag the images which doesn't contain any single characters to the red panel.</p>
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture4.gif') }}"></p>
+            <p>After pressing 'SUBMIT', you'll be directed to the PART-2 of the task.</p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition5', 'popupBoxOnePosition6');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition6', 'popupBoxOnePosition7');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="popupBoxOnePosition7">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <h1>TUTORIAL PART 2</h1>
+            <h2>"GROUP SAME CHARACTERS"</h2><br />
+            <p>Here Your task is to put all the images having the same character in one panel</p>
+            <br />
+            <p style="text-align: center;"><img draggable="false" height="300px" width="700px" src="{{ url_for('static', filename='img/Picture5.png') }}"></p>
+            <p align="center">This is how the first screen looks.</p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition6', 'popupBoxOnePosition7');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition7', 'popupBoxOnePosition8');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+<div id="popupBoxOnePosition8">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <h1>TUTORIAL PART 2</h1>
+            <h2>"GROUP SAME CHARACTERS"</h2><br />
+            <p>You have to drag the images of same person in one panel. Make sure to drop the picture in the black highlighted region.</p>
+            <p style="text-align: center;"><img draggable="false" height="350px" width="700px" src="{{ url_for('static', filename='img/Picture6.gif') }}"></p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition7', 'popupBoxOnePosition8');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition8', 'popupBoxOnePosition9');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+<div id="popupBoxOnePosition9">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <h1>TUTORIAL PART 2</h1>
+            <h2>"GROUP SAME CHARACTERS"</h2>
+            <p>You can always compare larger sizes of 2 images with the help of side panel.</p>
+            <p style="text-align: center;"><img draggable="false" height="350px" width="700px" src="{{ url_for('static', filename='img/Picture7.gif') }}"></p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition8', 'popupBoxOnePosition9');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition9', 'popupBoxOnePosition10');" style="background-color: #de3535;">Next</a></span></p>
+        </div>
+    </div>
+</div>
+
+<div id="popupBoxOnePosition10">
+    <div class="popupBoxWrapper2">
+        <div class="popupBoxContent">
+            <h1>TUTORIAL PART 2</h1>
+            <h2>"GROUP SAME CHARACTERS"</h2>
+            <br />
+            <p>You can use any number of green panels, empty panels will be taken care of automatically.</p>
+            <p>If you're not sure about any picture, keep it in the red panel itself.</p>
+            <p>Before pressing submit, make sure, you've grouped every picture. Any picture not included in the green panels will be considered "NOT SURE".</p>
+            <p>You can go through the tutorial anytime by clicking on the button on top left.</p>
+            <p>ALL THE BEST, let's get you started.</p>
+            <p id="buttons" ><span><a href="javascript:void(0)" class="button" onclick="switch_visibility('popupBoxOnePosition9', 'popupBoxOnePosition10');" style="background-color: #de3535;">Back</a></span>
+            <span id="rt"><a href="pipeline1.html" class="button" onclick="toggle_visibility('popupBoxOnePosition10');" style="background-color: #de3535;">Let's Start</a></span></p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="wrapper">
+    <h1>HELLO THERE!</h1>
+    <h2>Push the button on the top left corner to get started</h2>
+</div>

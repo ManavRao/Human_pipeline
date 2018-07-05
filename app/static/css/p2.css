@@ -1,0 +1,177 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #ffffff;
+    font-family: Verdana, serif;
+	font-size: 16px;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container {
+    width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.compare {
+    width: 35%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.compare .deck{
+	width: 200px;
+    height: 200px;
+}
+
+.compare .deck .card{
+	transform: scale(3);
+}
+
+
+.add {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+h1 {
+	font-family: Verdana;
+	color:black;
+}
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+	width: 95%;
+	padding: 1rem;
+	border-radius: 4px;
+	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 0 3em;
+}
+
+.deck1 {
+	width: 95%;
+	padding: 1rem;
+	border-radius: 4px;
+	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 0 3em;
+}
+
+
+.characterset {
+    width: 95%;
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+.characterset .deck{
+    width: 30%;
+	padding: 1rem;
+	border-radius: 4px;
+	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 8px 3em;
+
+}
+#card-deck{
+	background: darkred;
+}
+
+#character{
+    background: darkolivegreen;
+}
+
+#compare_character{
+    background: darkslateblue;
+}
+
+
+.deck .card {
+	height: 4.7rem;
+	width: 5.7rem;
+	margin: 0.2rem 0.2rem;
+	font-size: 0;
+	color: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck1 .card {
+	height: 5.7rem;
+	width: 7.7rem;
+	margin: 0.2rem 0.2rem;
+	font-size: 0;
+	color: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.compare .deck .card:hover{
+	transform: scale(3);
+}
+
+.deck .card:hover {
+    transform: scale(2);
+}
+
+.deck1 .card:hover {
+    transform: scale(2);
+}
